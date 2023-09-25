@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ConnectCo | Warehouse solutions and services</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="ConnectCo - Warehouse solutions and services">
+    <meta name="keywords" content="">
+    <meta name="author" content="ConnectCo">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="theme-color" content="white">
+
+    <!-- Theme mode-->
+    <script>
+      let mode = window.localStorage.getItem('mode'),
+          root = document.getElementsByTagName('html')[0];
+      if (mode !== undefined && mode === 'dark') {
+        root.classList.add('dark-mode');
+      } else {
+        root.classList.remove('dark-mode');
+      }
+    </script>
+    
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .dark-mode .page-loading {
+        background-color: #121519;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #6f788b;
+      }
+      .dark-mode .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        background-color: #d7dde2; 
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      .dark-mode .page-spinner {
+        background-color: rgba(255,255,255,.25);
+      }
+      @-webkit-keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      @keyframes spinner {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      // (function () {
+      //   window.onload = function () {
+      //     const preloader = document.querySelector('.page-loading');
+      //     preloader.classList.remove('active');
+      //     setTimeout(function () {
+      //       preloader.remove();
+      //     }, 1500);
+      //   };
+      // })();
+      
+    </script>
+    <!-- Import Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" id="google-font">
+    <!-- Vendor styles-->
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" media="screen" href="assets/vendor/aos/dist/aos.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+    <!-- Custom color styles -->
+    <style>
+      :root{--ar-primary:#c1df26;--ar-primary-rgb:193,223,38;--ar-link-color:#c1df26;--ar-link-hover-color:#a8c60d;}.btn-primary{--ar-btn-bg:#c1df26;--ar-btn-border-color:#c1df26;--ar-btn-hover-bg:#a8c60d;--ar-btn-hover-border-color:#a8c60d;--ar-btn-active-bg:#a8c60d;--ar-btn-active-border-color:#a8c60d;--ar-btn-disabled-bg:#c1df26;--ar-btn-disabled-border-color:#c1df26;}.btn-outline-primary{--ar-btn-color:#c1df26;--ar-btn-border-color:#c1df26;--ar-btn-hover-bg:#c1df26;--ar-btn-hover-border-color:#c1df26;--ar-btn-active-bg:#c1df26;--ar-btn-active-border-color:#c1df26;--ar-btn-disabled-color:#c1df26;--ar-btn-disabled-border-color:#c1df26;}
+    </style>
+  </head>
+  <!-- Body-->
+  <body>
+    
+    <!-- Page loading spinner-->
+    <div class="page-loading">
+    <!-- <div class="page-loading active"> -->
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+    <!-- Page wrapper-->
+    <main class="page-wrapper">
+      <!-- Navbar. Remove 'fixed-top' class to make the navigation bar scrollable with the page-->
+      <header class="navbar dark-mode bg-dark navbar-expand-lg fixed-top">
+        <div class="container"><a class="navbar-brand pe-sm-3" href="index.html" style="color:#c1df26">
+          <span class="text-primary flex-shrink-0 me-2">
+              <svg width="45" height="21" viewBox="0 0 573 266" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="https://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                <g id="Layer-1" serif:id="Layer 1">
+                    <g transform="matrix(1,0,0,1,388.798,262.101)">
+                        <path d="M0,-262.101L0,-17.482L-58.291,-262.101L-194.429,-262.101L-194.429,-17.482L-252.842,-262.101L-388.798,-262.101L-388.798,0L-317.471,0L-317.471,-244.559L-259.117,0L-123.04,0L-123.04,-244.559L-64.626,0L71.327,0L71.327,-262.101L0,-262.101Z" style="fill:rgb(193,223,38);fill-rule:nonzero;"/>
+                    </g>
+                    <g transform="matrix(0,-1,-1,0,532.901,186.635)">
+                        <path d="M-39.577,-39.577C-61.435,-39.577 -79.154,-21.858 -79.154,0C-79.154,21.858 -61.435,39.577 -39.577,39.577C-17.719,39.577 0,21.858 0,0C0,-21.858 -17.719,-39.577 -39.577,-39.577" style="fill:rgb(193,223,38);fill-rule:nonzero;"/>
+                    </g>
+                </g>
+            </svg>
+          </span><strong>ConnectCo</strong></a>
+
+          <a class="btn btn-outline-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex me-sm-3 me-lg-4" href="https://forms.gle/1ZJa9JnsMingjiyp6" target="_blank" rel="noopener">Get in touch</a>
+          <a class="btn btn-outline-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex" href="https://supplier.connectco.me" target="_blank" rel="noopener">Connect +</a>
+
+          <button class="navbar-toggler ms-sm-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+          
+          <nav class="collapse bg-dark navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll me-auto" style="--ar-scroll-height: 520px;">
+              
+              <li class="nav-item"><a class="nav-link" href="#why-connectco-different" style="color:#c1df26" data-scroll>Why us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#connectco-capabilities" style="color:#c1df26" data-scroll>Our capabilities</a></li>
+              <li class="nav-item"><a class="nav-link" href="#connectco-pricing" style="color:#c1df26" data-scroll>Pricing</a></li>
+
+            </ul>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-outline-primary w-100 mb-1" href="https://forms.gle/1ZJa9JnsMingjiyp6" target="_blank" rel="noopener">Get in touch</a></div>
+            <div class="d-sm-none p-3 mt-n3"><a class="btn btn-outline-primary w-100 mb-1" href="https://supplier.connectco.me" target="_blank" rel="noopener">WMS Portal</a></div>
+          </nav>
+        </div>
+      </header>
+      <!-- Page content-->
+
+      <!-- Hero-->
+      <section class="bg-dark dark-mode position-relative py-5">
+        <div class="position-absolute top-0 start-0 w-100 h-100" xstyle="background-image: url(assets/img/noise.png); mix-blend-mode: soft-light; opacity: 12%"></div>
+        <div class="container position-relative zindex-2 py-md-3 py-lg-4 py-xl-5">
+          <div class="row align-items-center justify-content-center pt-5 pb-2 pb-sm-3 mt-sm-4">
+            <div class="col-10 col-sm-8 col-md-6 col-xl-5 offset-lg-1 offset-xl-2 order-md-2 pb-3 pb-md-0 mb-3 mb-sm-4 mb-md-0">
+              <div class="swiper" data-swiper-options="{
+              &quot;effect&quot;: &quot;creative&quot;,
+              &quot;loop&quot;: true,
+              &quot;allowTouchMove&quot;: false,
+              &quot;speed&quot;: 450,
+              &quot;autoplay&quot;: {
+                &quot;delay&quot;: 6000,
+                &quot;disableOnInteraction&quot;: false
+              },
+              &quot;creativeEffect&quot;: {
+                &quot;prev&quot;: {
+                  &quot;shadow&quot;: true,
+                  &quot;translate&quot;: [&quot;-20%&quot;, 0, -1]
+                },
+                &quot;next&quot;: {
+                  &quot;translate&quot;: [&quot;100%&quot;, 0, 0]
+                }
+              },
+              &quot;thumbnails&quot;: {
+                &quot;el&quot;: &quot;#thumbnails&quot;,
+                &quot;images&quot;: [
+                  &quot;assets/img/connectco/th-hero-1-warehouse-fulfilment.jpg&quot;,
+                  &quot;assets/img/connectco/th-hero-2-shipping.jpg&quot;,
+                  &quot;assets/img/connectco/th-hero-3-online.jpg&quot;
+                ]
+              }
+            }" style="border-radius: 50%; border-bottom-right-radius: 0;">
+                <div class="swiper-wrapper">
+                  <!-- Item-->
+                  <div class="swiper-slide">
+                    <div class="position-relative overflow-hidden" style="border-bottom-left-radius: 50%; border-top-left-radius: 50%;"><img src="assets/img/connectco/hero-1-warehouse-fulfilment.jpg" alt="Image">
+                      <div class="d-flex align-items-end justify-content-end position-absolute start-0 bottom-0 w-100" style="height: 215px; background: linear-gradient(0deg, rgba(15, 17, 21, 0.8) 0%, rgba(16, 20, 24, 0) 50%);">
+                        <div class="text-end pe-4 pb-4">
+                          <h3 class="h5 mb-1">Warehouse Fulfillment</h3>
+                          <p class="fs-sm mb-0">Centralized management</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <div class="swiper-slide">
+                    <div class="position-relative overflow-hidden" style="border-bottom-left-radius: 50%; border-top-left-radius: 50%;"><img src="assets/img/connectco/hero-2-shipping.jpg" alt="Image">
+                      <div class="d-flex align-items-end justify-content-end position-absolute start-0 bottom-0 w-100" style="height: 215px; background: linear-gradient(0deg, rgba(15, 17, 21, 0.8) 0%, rgba(16, 20, 24, 0) 20%);">
+                        <div class="text-end pe-4 pb-4">
+                          <h3 class="h5 mb-1">Last mile delivery</h3>
+                          <p class="fs-sm mb-0">Move your business at speed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Item-->
+                  <div class="swiper-slide">
+                    <div class="position-relative overflow-hidden" style="border-bottom-left-radius: 50%; border-top-left-radius: 50%;"><img src="assets/img/connectco/hero-3-online.jpg" alt="Image">
+                      <div class="d-flex align-items-end justify-content-end position-absolute start-0 bottom-0 w-100" style="height: 215px; background: linear-gradient(0deg, rgba(15, 17, 21, 0.8) 0%, rgba(16, 20, 24, 0) 20%);">
+                        <div class="text-end pe-4 pb-4">
+                          <h3 class="h5 mb-1">Real-time visibility</h3>
+                          <p class="fs-sm mb-0">Rich customer insights</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Thumbnails-->
+              <div class="swiper-thumbnails swiper-thumbnails-circle flex-nowrap justify-content-end pt-4" id="thumbnails"></div>
+            </div>
+            <div class="col-sm-10 col-md-6 col-lg-5 order-md-1">
+              <h1 class="display-3 pb-1 mb-1">Digital infrastructure</h1>
+              <h1 class="display-5 mb-4 pb-4"><span class='fw-normal'>powering e-commerce businesses</span></h1>
+              
+              <div class="row row-cols-3 pb-5 mb-5">
+                <div class="col"><i class="ai-circle-check-filled d-block fs-3 text-dark mb-3"></i>
+                  <p class="mb-0">End-to-end services & solutions for warehouse fulfillment</p>
+                </div>
+                <div class="col"><i class="ai-rocket d-block fs-2 text-dark mb-3"></i>
+                  <p class="mb-0">Move your business at the speed of light with last mile delivery</p>
+                </div>
+                <div class="col"><i class="ai-bulb-alt d-block fs-1 text-dark mb-2 pb-1"></i>
+                  <p class="mb-0">Fully online portal with real-time visibility and rich insights</p>
+                </div>
+                
+              </div>
+
+              <div class="d-sm-flex">
+                <a class="btn btn-lg btn-outline-primary w-100 w-md-auto mb-3 mb-sm-0 me-sm-3 me-lg-4" target="_blank" href="https://forms.gle/1ZJa9JnsMingjiyp6" data-scroll data-scroll-offset="120">Get in touch<i class="ai-arrow-right ms-2 me-n2"></i></a>
+                <a class="btn btn-lg btn-outline-light w-100 w-md-auto" href="#why-connectco-different" data-scroll>Why us?<i class="ai-arrow-down ms-2 me-n2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Statistics-->
+      <section class="container pt-5 pb-2 pb-sm-3 pb-md-3 pb-lg-3 mb-xl-3 mb-xxl-5">
+        <div class="bg-faded-primary rounded-5 py-4 py-md-5 px-lg-5">
+          <div class="row row-cols-2 row-cols-md-4 g-0">
+            <div class="col d-md-flex justify-content-center text-center text-md-start position-relative">
+              <div class="position-absolute top-50 end-0 translate-middle-y border-end" style="height: 60px;"></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div class="h2 display-5 text-primary mb-0">50+</div><span>Happy clients</span>
+              </div>
+            </div>
+            <div class="col d-md-flex justify-content-center text-center text-md-start position-relative">
+              <div class="position-absolute top-50 end-0 translate-middle-y border-end d-none d-md-block" style="height: 60px;"></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div class="h2 display-5 text-primary mb-0">5k+</div><span>Managed SKUs</span>
+              </div>
+            </div>
+            <div class="col d-md-flex justify-content-center text-center text-md-start position-relative">
+              <div class="position-absolute top-50 end-0 translate-middle-y border-end" style="height: 60px;"></div>
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div class="h2 display-5 text-primary mb-0">10k+</div><span>Inventory items</span>
+              </div>
+            </div>
+            <div class="col d-md-flex justify-content-center text-center text-md-start position-relative">
+              <div class="p-3 px-sm-0 py-sm-4">
+                <div class="h2 display-5 text-primary mb-0">10k+</div><span>Packages delivered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services-->
+      <section id="why-connectco-different" class="container py-3 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
+
+        <div class="row align-items-center py-1 py-sm-3 py-md-4 my-lg-2">
+          <div class="col-lg-4 offset-xl-1">
+            <h2 class="h1 text-center text-lg-start pb-3 pb-lg-1">What makes ConnectCo different?</h2>
+            <p class="fs-lg mb-0">We are e-commerce fulfillment experts. We have the systems, processes and experience.</p>
+            <!-- Show on screens > 992px-->
+            <ul class="list-unstyled d-lg-block pb-3 py-2 mb-3 mb-lg-4">
+              <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Technology</li>
+              <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Precision service</li>
+              <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Experience</li>
+            </ul>
+            <!-- <a class="btn btn-lg btn-primary w-100 w-md-auto mb-3 mb-sm-0 me-sm-3 me-lg-4" href="#" data-scroll data-scroll-offset="120">Contact us<i class="ai-arrow-right ms-2 me-n2"></i></a> -->
+          </div>
+
+          <div class="col-lg-8 col-xl-7 col-xxl-6">
+            <div class="row row-cols-1 row-cols-sm-2">
+              <div class="col">
+                <div class="card border-0 bg-faded-primary">
+                  <div class="card-body"><i class="ai-search-settings fs-1 text-primary d-block mb-3"></i>
+                    <h3 class="h4">Extensive Capabilities</h3>
+                    <p class="fs-sm">We are experts in Fulfillment Services for E-Commerce companies. We also provide expert Kitting and Custom Order Assemblies, and a fully managed Returns Management program.</p>
+                  </div>
+                </div>
+                <div class="card border-0 bg-faded-info mt-4">
+                  <div class="card-body"><i class="ai-bulb-alt fs-1 text-info d-block mb-3"></i>
+                    <h3 class="h4">Web-Based Platform</h3>
+                    <p class="fs-sm">The Connectco.me platform is entirely online. After a quick setup, you'll have a real-time view of inventory, products and orders from any device. Run reports, check your Dashboard, or use the Customer Support Center to learn more.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col pt-lg-3">
+                <div class="card border-0 bg-faded-warning mt-4 mt-sm-0 mt-lg-4">
+                  <div class="card-body"><i class="ai-user-group fs-1 text-warning d-block mb-3"></i>
+                    <h3 class="h4">Experienced Experts</h3>
+                    <p class="fs-sm">With expert staff base, we have what it takes to get your orders out on time and right, every time.</p>
+                  </div>
+                </div>
+                <div class="card border-0 bg-faded-danger mt-4">
+                  <div class="card-body"><i class="ai-telegram fs-2 text-danger d-block mb-3"></i>
+                    <h3 class="h4">Precision Service & Cost efficient</h3>
+                    <p class="fs-sm">Our internal Quality System is based on 5S principles and Six Sigma standards, and we hold ourselves to measures such as 98% Inventory Accuracy and 99% Order Accuracy at a feasible cost which suits your business.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="bg-faded-primary rounded-5 mt-5">
+         
+          <!-- video -->
+          <div class="row align-items-center ">
+            <video class="d-block w-100" loop controls poster="assets/img/connectco/poster-connectco-capabilities.jpg" style="border-radius: calc(var(--ar-border-radius) * 2);">
+              <source src="https://s3.ap-south-1.amazonaws.com/connectco.me-website-assets/video/connectco-capabilities.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+
+        <!-- <div class="row align-items-center py-5 py-sm-3 py-md-4 my-lg-2">
+          <div class="text-center mt-sm-4">
+            <a class="btn btn-lg btn-primary w-100 w-md-auto mb-3 mb-sm-0 me-sm-3 me-lg-4" href="#" data-scroll data-scroll-offset="120">Get in touch<i class="ai-arrow-right ms-2 me-n2"></i></a>
+            <a class="btn btn-lg btn-outline-dark w-100 w-md-auto" href="#connectco-capabilities" data-scroll>Our capabilities<i class="ai-arrow-down ms-2 me-n2"></i></a>
+          </div>
+        </div> -->
+
+      </section>
+
+
+      <!-- Capabilities -->
+      <section id="connectco-capabilities" class="container py-4 py-sm-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
+        <!-- Section title-->
+        <div class="text-center pb-3 pt-lg-2 pt-xl-4 my-1 my-sm-3 my-lg-4">
+          <h1 class="display-4">Our Capabilities and Services</h1>
+          <p class="fs-lg mb-0">Connect co software offers modern brands an ecommerce command center, centralizing their Order Management, Inventory Planning and Network Optimization into one place – accelerating delivery of goods to a customer’s door while reducing shipping time, cost, and carbon footprint.</p>
+        </div>
+
+        <!-- Capabilities -->
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability-warehouse.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 order-md-1">
+            <div class="pe-md-4 pe-xl-0">
+              <h2 class="h1 pb-1 pb-lg-1">Warehousing</h2>
+              <p class="pb-2 pb-lg-0 mb-3">Our warehousing service includes 3 main steps:</p>
+              <h3 class="h5 mb-1">We contact the supplier on behalf of you to communicate the delivery details.</h3>
+              <ul class="list-unstyled d-lg-block pb-3 py-1 mb-2">
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We can even help you pay them, or finish the sourcing and purchase, if needed, in this step.</li>
+              </ul>
+              <h3 class="h5 mb-1">We pick up the goods from supplier/ manufacturer to our warehouse.</h3>
+              <ul class="list-unstyled d-lg-block pb-3 py-1 mb-2">
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>The goods can be picked up no matter where the manufactures are in China.</li>
+              </ul>
+              <h3 class="h5 mb-1">We collect the goods in our warehouse, store them and report the inventory data to you.</h3>
+              <ul class="list-unstyled d-lg-block pb-3 py-1 mb-2">
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We have E-commerce fulfilment warehouse, general/bonded transship warehouse. And there are different warehouses and different locations, including in China, US & UK</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>China's warehouse is closer to the suppliers/factories/manufactures, so it is more convenient to transship the goods from/to them, if needed.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability-fulfill.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Fulfillment</h2>
+              <p class="pb-2 pb-lg-0 mb-3">Connectco provides fulfilment services which include, among others: receipt of an order, invoicing, production, printing, storage, packaging, packing, shipment and handling returns.</p>
+              <ul class="list-unstyled d-lg-block pb-3 py-1 mb-2">
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Your e-store is orders data transferred to our fulfillment center warehouse.</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We sort out the suitable SKU product.</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We pick and pack the product by new carton/bag.</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We print and stick the related label.</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We prepare the cartons/parcels in our warehouse for next shipping arrangement.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability1.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 order-md-1">
+            <div class="pe-md-4 pe-xl-0">
+              <h2 class="h1 pb-1 pb-lg-1">Product Photography</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Improve your conversion rate with connectco professional photography service! Our studio is equipped with latest technology. We specialize in product photography for eCommerce platforms including 3D and 365-degree pictures to enhance your customer experience.</p>
+              <div class="row row-cols">
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Competitive quotation</h3>
+                  <p class="fs-sm mb-0">Get the best quote for product photography for your online store at an affordable price.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability2.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Global sourcing</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Connectco has a global connection which ensures the best hands handle your sourcing, production, shipment, and fulfillment. We’ll help you find, choose, and manage suppliers to bring your product to the market. We can help you source/purchase products from China's suppliers. Meantime, we can help you pay them, check their products availability, delivery date, etc.<br><br>The process of sourcing from China, USA, Turkey & other markets involve:</p>
+              <div class="row row-cols-2 mb-4">
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Request for Quote</h3>
+                  <p class="fs-sm mb-0">We provide you with a minimum of 3 written sealed quotes from different suppliers</p>
+                </div>
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Production process</h3>
+                  <p class="fs-sm mb-0">We place the order in your name to the company while applying for terms and conditions. We also discuss all details such as payment term, delivery, quantity while pushing for quick delivery.</p>
+                </div>
+              </div>
+              <div class="row row-cols-2 mb-4">
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Quality Control</h3>
+                  <p class="fs-sm mb-0">We monitor the entire order during the production process and inspect all your goods before shipment to ensure they are in perfect order.</p>
+                </div>
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Delivered to your doorstep</h3>
+                  <p class="fs-sm mb-0">Whether you want the goods to be shipped to our warehouse or to your doorstep, we’ll handle the logistics for you. We take care of the entire shipping and customs clearance process from USA, China & Turkey to Kuwait.</p>
+                </div>
+              </div>
+              <div class="row row-cols-2">
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Always available</h3>
+                  <p class="fs-sm mb-0">We’re there for you anytime you need us. Contact us for a consultation, estimate or any question you might have about your needs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 offset-xl-1 order-md-2 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability3.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 order-md-1">
+            <div class="pe-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Refrigerated storage and fulfillment</h2>
+              <p class="pb-2 pb-lg-0 mb-4 mb-lg-5">Get temperature-controlled storage and delivery for your refrigerated goods to ensure freshness and quality. Keep your food, beverages, and other perishable items fresh with temperature-controlled storage. We have warehouse with cold storage capacity that can keep your goods refrigerated while you wait for your orders to come in.</p>
+              <div class="row row-cols">
+                <div class="col">
+                  <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+                  <h3 class="h5 mb-2">Services offered</h3>
+                  <p class="fs-sm mb-0">Temperature controlled cold storage & Delivery service</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center py-4 py-xl-5 my-2">
+          <div class="col-md-6 pb-2 mb-4 mb-md-0"><img class="rounded-5" src="assets/img/connectco/capability4.jpg" alt="Image"></div>
+          <div class="col-md-6 col-xl-5 offset-xl-1">
+            <div class="ps-md-4 pe-xl-0">
+              <h2 class="h1 pb-2 pb-lg-3">Frozen order fulfillment</h2>
+              <p class="pb-2 pb-lg-0 mb-0 mb-lg-0">Avoid spoilage and ensure quality frozen item delivery with our refrigerated goods delivery. We can maintain consistent temperatures during transportation to ensure your items get to your buyers in top shape.</p>
+              <ul class="list-unstyled d-lg-block pb-3 py-2 mb-3 mb-lg-4">
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Monitor your inventory quality at a glance</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Contact our warehouse managers to ensure the right temperature for your goods.</li>
+                <li class="d-flex pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>We can even do quality checks and inspect your items.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- capabilities with limited text -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 pb-sm-3 pb-md-4 pb-xl-5">
+
+          <div class="col">
+            <div class="card card-hover-primary bg-faded-primary border-0 h-100 text-decoration-none card-body pb-6">
+              <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+              <h3 class="h4 card-title mt-0">Business to Retail / B2B replenishment</h3>
+              <p class="card-text">Keep your items in stock at any retail stores like Trolley, co-operative societies etc. with our business to retail fulfillment.</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card card-hover-primary bg-faded-primary border-0 h-100 text-decoration-none card-body pb-6">
+              <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+              <h3 class="h4 card-title mt-0">Rapid turnaround</h3>
+              <p class="card-text">Store your items with us for prep and compliance, and we’ll handle labels, bundles, packaging and more then send to your retailer within 24 - 72 hours. We have some of the fastest turnaround times in the industry, which your partners and buyers will appreciate.</p>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card card-hover-primary bg-faded-primary border-0 h-100 text-decoration-none card-body pb-6">
+              <i class="ai-bulb-alt fs-2 text-primary mb-3"></i>
+              <h3 class="h4 card-title mt-0">Inventory breakdowns</h3>
+              <p class="card-text">If you get bulk shipments that need to go to multiple different places. Let connectco break down your inventory and send it to retailers according to your allocation. We can separate or forward cartons, pallets, and more to ensure the right allotment of units everywhere you sell and track your transactions through ConnectCo platform.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- Pricing plans-->
+      <section class="container py-3 mt-0 mb-lg-3 mb-xl-4 mb-xxl-5" id="connectco-pricing">
+        <!-- Section title-->
+        <div class="text-center pb-3 pt-lg-2 pt-xl-4 my-1 my-sm-3 my-lg-4">
+          <h1 class="display-4">Pricing plans</h1>
+          <p class="fs-lg mb-0">Select a service plan that best suits your business needs</p>
+        </div>
+        <!-- Plans-->
+        <div class="row row-cols-3 flex-nowrap pb-4 overflow-auto">
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Start-up</h3>
+                <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Upto 5 SKU’s including variants</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>149 pc total quantity upto 1 cbm</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited next day delivery</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this plan now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Basic</h3>
+                <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Upto 10 SKU’s including variants</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>299 pc total quantity upto 2 cbm</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited next day delivery</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this plan now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Standard</h3>
+                <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Upto 25 SKU’s including variants</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>499 pc total quantity upto 3 cbm</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited next day delivery</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this plan now</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row row-cols-3 flex-nowrap pb-4 overflow-auto">
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Elite</h3>
+                <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Upto 50 SKU’s including variants</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>999 pc total quantity upto 4 cbm</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited next day delivery</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Account manager</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this plan now</button>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Priority</h3>
+                <ul class="list-unstyled pb-3 mb-3 mb-lg-4">
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited SKUs</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Unlimited stock upto 10 cbm</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Kitting</li>
+                  <li class="pt-2"><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>White Glove service</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this plan now</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan-->
+          <div class="col" style="min-width: 19rem;">
+            <div class="card h-100 py-lg-4">
+              <div class="card-body w-100 mx-auto text-center" style="max-width: 23rem;">
+                <h3>Add-ons</h3>
+                <h5 class="mb-0">White Glove service</h5>
+                <ul class="list-unstyled mt-0">
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Same day delivery</li>
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Account manager</li>
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Customer care</li>
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Photoshoot services</li>
+                </ul>
+                <h5 class="mb-0">Container unloading</h5>
+                <ul class="list-unstyled mt-0">
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>20ft, 40ft containers</li>
+                </ul>
+                <h5 class="mb-0">Bulk storage</h5>
+                <ul class="list-unstyled mt-0">
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Cold storage</li>
+                  <li><i class="ai-check fs-4 text-primary mt-n1 me-2"></i>Pallet storage</li>
+                </ul>
+                <button class="btn btn-primary w-100" type="button">Get this additonal service</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Comparison table-->
+        <div class="text-center pt-md-1 pt-lg-2">
+          <button class="btn btn-more btn-link fs-4" type="button" data-show-label="Compare plans" data-hide-label="Compare plans" data-bs-toggle="collapse" data-bs-target="#comparePlans"></button>
+        </div>
+        <div class="collapse show" id="comparePlans">
+          <div class="table-responsive pt-sm-2 pt-lg-3">
+            <table class="table text-center text-nowrap">
+              <thead>
+                <tr>
+                  <th class="border-0 py-3">&nbsp;</th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Start-up</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Basic</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Standard</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Elite</span></th>
+                  <th class="border-0 py-3"><span class="h5 mb-0">Priority</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="text-body fw-medium">SKUs count</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">5</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">10</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">25</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">50</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark">Unlimited</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Stock quantity (pcs)</span></th>
+                  <td class="border-0 py-3"><span class="text-dark">149</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">299</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">499</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">999</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Storage (cbm)</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">upto 1</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">upto 2</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">upto 3</span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark">upto 4</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark">upto 10</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Next day delivery</span></th>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                  <td class="border-0 py-3"><span class="text-dark">Unlimited</span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Special packaging service</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"><i class="ai-cross fs-xl text-danger"></span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"><i class="ai-cross fs-xl text-danger"></span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"><i class="ai-cross fs-xl text-danger"></span></td>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"><i class="ai-cross fs-xl text-danger"></span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark"><i class="ai-check fs-xl text-primary"></span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Same day delivery</span></th>
+                  <td class="border-0 py-3"><span class="text-dark"></span></td>
+                  <td class="border-0 py-3" colspan="3"><span class="text-dark">Available separately as additional service</span></td>
+                  <td class="border-0 py-3"><span class="text-dark"></span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Personalized account manager</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"></span></td>
+                  <td class="border-0 bg-secondary py-3" colspan="3"><span class="text-dark">Avalable with White Glove additional service</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark"></span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Dedicated customer care service</span></th>
+                  <td class="border-0 py-3"><span class="text-dark"></span></td>
+                  <td class="border-0 py-3" colspan="3"><span class="text-dark">Avalable with White Glove additional service</span></td>
+                  <td class="border-0 py-3"><span class="text-dark"></span></td>
+                </tr>
+                <tr>
+                  <th class="border-0 bg-secondary rounded-3 rounded-end-0 text-start py-3 ps-4"><span class="d-flex align-items-center text-body fw-medium">Special packaging & Kitting services</span></th>
+                  <td class="border-0 bg-secondary py-3"><span class="text-dark"></span></td>
+                  <td class="border-0 bg-secondary py-3" colspan="3"><span class="text-dark">Avalable with White Glove additional service</span></td>
+                  <td class="border-0 rounded-3 rounded-start-0 bg-secondary py-3"><span class="text-dark"></span></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      
+    </main>
+    <!-- Footer-->
+    <footer class="footer py-5 bg-dark dark-mode">
+      <div class="container pt-md-2 pt-lg-3 pt-xl-4">
+        <div class="row pb-5 pt-sm-2 mb-lg-2">
+          <div class="col-md-12 col-lg-6 pb-2 pb-lg-0 mb-4 mb-lg-0"><a class="navbar-brand py-0 mb-3 mb-lg-4" href="index.html"><span class="text-primary flex-shrink-0 me-2">
+                <svg width="45" height="21" viewBox="0 0 573 266" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="https://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+                    <g id="Layer-1" serif:id="Layer 1">
+                        <g transform="matrix(1,0,0,1,388.798,262.101)">
+                            <path d="M0,-262.101L0,-17.482L-58.291,-262.101L-194.429,-262.101L-194.429,-17.482L-252.842,-262.101L-388.798,-262.101L-388.798,0L-317.471,0L-317.471,-244.559L-259.117,0L-123.04,0L-123.04,-244.559L-64.626,0L71.327,0L71.327,-262.101L0,-262.101Z" style="fill:rgb(193,223,38);fill-rule:nonzero;"/>
+                        </g>
+                        <g transform="matrix(0,-1,-1,0,532.901,186.635)">
+                            <path d="M-39.577,-39.577C-61.435,-39.577 -79.154,-21.858 -79.154,0C-79.154,21.858 -61.435,39.577 -39.577,39.577C-17.719,39.577 0,21.858 0,0C0,-21.858 -17.719,-39.577 -39.577,-39.577" style="fill:rgb(193,223,38);fill-rule:nonzero;"/>
+                        </g>
+                    </g>
+                </svg>
+                </span><span class="text-nav"><strong style="color:#c1df26">ConnectCo</strong></span></a>
+            
+            <p class="fs-sm pb-2 pb-lg-3 mb-3">
+              <span style="color:#c1df26">PICK. PACK. SHIP.</span><br>
+              First-class prep, logistics, and fulfillment services for eCommerce sellers.
+            </p>
+
+          </div>
+          <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0">
+            <strong style="color:#c1df26">Sitelinks</strong>
+            <ul class="nav flex-column">
+              <li><a class="nav-link py-1 px-0" href="#why-connectco-different" data-scroll>Why us</a></li>
+              <li><a class="nav-link py-1 px-0" href="#connectco-capabilities"data-scroll>Capabilities</a></li>
+              <li><a class="nav-link py-1 px-0" href="#connectco-pricing" data-scroll>Pricing</a></li>
+              <li><a class="nav-link py-1 px-0" href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 col-lg-3 mb-4 mb-sm-0">
+            <strong style="color:#c1df26">Contact details</strong>
+            <ul class="nav flex-column">
+              <li><a class="nav-link py-1 px-0" href="mailto:contactus@connectco.me">Email: info@connectco.me</a></li>
+              <li><a class="nav-link py-1 px-0" href="tel:+15262200459">Phone: +965 22001006</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <p class="fs-sm mb-0"><span class="opacity-70">&copy; All rights reserved. ConnectCo.</p>
+      </div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll>
+      <svg viewBox="0 0 40 40" fill="currentColor" xmlns="https://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></circle>
+      </svg><i class="ai-arrow-up"></i></a>
+    <!-- Vendor scripts: js libraries and plugins-->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="assets/vendor/parallax-js/dist/parallax.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/aos/dist/aos.js"></script>
+    <!-- Main theme script-->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>
